@@ -1,4 +1,4 @@
-function Cart() {
+function HomeMain() {
     return (
         <main>
             
@@ -6,4 +6,4 @@ function Cart() {
     )
 }
 
-export default Cart;
+export default HomeMain;
