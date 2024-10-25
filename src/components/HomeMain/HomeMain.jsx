@@ -1,7 +1,9 @@
+import styles from "./HomeMain.module.css";
+
 function HomeMain() {
     return (
-        <main>
-            
+        <main className={styles.main}>
+
         </main>
     )
 }
