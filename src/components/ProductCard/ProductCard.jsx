@@ -1,5 +1,6 @@
 import PropTypes from "prop-types";
 import { useState } from "react";
+import AddToCartButton from "../AddToCartButton/AddToCartButton";
 import styles from "./ProductCard.module.css";
 
 const ProductCard = ({ product }) => {
@@ -23,7 +24,7 @@ const ProductCard = ({ product }) => {
             <input type="number" value={quantity} min={0} readOnly/>
             <button onClick={handleIncrement}>+</button>
         </div>
-        <button>Add to Cart</button> {/* create a diff component */}
+        <AddToCartButton />
         </div>
     );
 };
