@@ -1,4 +1,4 @@
-import { useCart } from "../../context/CartContext";
+import { useCart } from "react";
 import PropTypes from "prop-types";
 import styles from "./AddToCartButton.module.css";
 
