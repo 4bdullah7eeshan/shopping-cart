@@ -4,11 +4,14 @@ import { createBrowserRouter, RouterProvider } from "react-router-dom";
 import routes from "./routes";
 import "./styles/reset.css";
 import "./styles/layout.css";
+import { CartProvider } from './context/CartContext';
 
 const router = createBrowserRouter(routes);
 
 createRoot(document.getElementById('root')).render(
   <StrictMode>
-    <RouterProvider router={router} />
+    <CartProvider >
+      <RouterProvider router={router} />
+    </CartProvider>
   </StrictMode>,
 )

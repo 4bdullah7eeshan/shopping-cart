@@ -6,6 +6,7 @@ const AddToCartButton = ({ product, quantity }) => {
     const { addToCart } = useCart();
 
     const handleAddToCart = () => {
+        console.log(`Adding to cart:`, product, `Quantity:`, quantity); // Debug log
         addToCart(product, quantity);
     };
 

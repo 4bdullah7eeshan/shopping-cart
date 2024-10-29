@@ -24,7 +24,7 @@ const ProductCard = ({ product }) => {
             <input type="number" value={quantity} min={0} readOnly/>
             <button onClick={handleIncrement}>+</button>
         </div>
-        <AddToCartButton />
+        <AddToCartButton product={product} quantity={quantity} />
         </div>
     );
 };
