@@ -1,13 +1,10 @@
-import { useCart } from "../../context/CartContext";
 import PropTypes from "prop-types";
 import styles from "./AddToCartButton.module.css";
 
-const AddToCartButton = ({ product, quantity }) => {
-    const { addToCart } = useCart();
+const AddToCartButton = () => {
 
     const handleAddToCart = () => {
-        console.log(`Adding to cart:`, product, `Quantity:`, quantity); // Debug log
-        addToCart(product, quantity);
+        
     };
 
     return (

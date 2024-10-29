@@ -1,29 +1,18 @@
 import PropTypes from "prop-types";
-import { useEffect, useState } from "react";
-import { useCart } from "../../context/CartContext";
+import { useState } from "react";
 import AddToCartButton from "../AddToCartButton/AddToCartButton";
 import styles from "./ProductCard.module.css";
 
 const ProductCard = ({ product }) => {
-    const { cart, updateCartItem } = useCart();
-    const [quantity, setQuantity] = useState(cart[product.id] || 0);
+    const [quantity, setQuantity] = useState(0);
 
-    useEffect(() => {
-        // Sync local quantity with cart context on load
-        setQuantity(cart[product.id] || 0);
-    }, [cart, product.id]);
 
-    const handleIncrement = () => {
-        const newQuantity = quantity + 1;
-        setQuantity(newQuantity);
-        updateCartItem(product.id, newQuantity);
-    };
+    const handleIncrement = () => setQuantity((prevQuantity) => prevQuantity + 1);
 
     const handleDecrement = () => {
-        const newQuantity = Math.max(quantity - 1, 0);
-        setQuantity(newQuantity);
-        updateCartItem(product.id, newQuantity);
+      setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
     };
+  
 
     return (
         <div className={styles.card}>
