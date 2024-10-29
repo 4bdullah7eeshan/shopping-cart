@@ -3,16 +3,11 @@ import { useState } from "react";
 import AddToCartButton from "../AddToCartButton/AddToCartButton";
 import styles from "./ProductCard.module.css";
 
-const ProductCard = ({ product }) => {
-    const [quantity, setQuantity] = useState(0);
-
+const ProductCard = ({ product, addToCart }) => {
+    const [quantity, setQuantity] = useState(1);
 
     const handleIncrement = () => setQuantity((prevQuantity) => prevQuantity + 1);
-
-    const handleDecrement = () => {
-      setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
-    };
-  
+    const handleDecrement = () => setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 1));
 
     return (
         <div className={styles.card}>
@@ -25,7 +20,7 @@ const ProductCard = ({ product }) => {
                 <button onClick={handleIncrement}>+</button>
             </div>
             {quantity > 0 && (
-                <AddToCartButton product={product} quantity={quantity} />
+                <AddToCartButton product={product} quantity={quantity} addToCart={addToCart} />
             )}
         </div>
     );
@@ -38,6 +33,7 @@ ProductCard.propTypes = {
         title: PropTypes.string,
         price: PropTypes.number,
     }).isRequired,
+    addToCart: PropTypes.func.isRequired,
 };
 
 export default ProductCard;

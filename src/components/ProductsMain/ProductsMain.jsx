@@ -24,7 +24,7 @@ const useProducts = () => {
     return { products, error, loading };
   };
   
-function ProductsMain() {
+function ProductsMain({ addToCart }) {
     const { products, error, loading } = useProducts();
 
     if (loading) return <p>Loading...</p>;
@@ -37,7 +37,7 @@ function ProductsMain() {
             </header>
             <div className={styles.products}>
                 {products && products.map((product) => (
-                    <ProductCard key={product.id} product={product} />
+                  <ProductCard key={product.id} product={product} addToCart={addToCart} />
                 ))}
             </div>
         </main>
