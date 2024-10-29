@@ -1,7 +1,13 @@
-import PropTypes from "prop-types";
+import { useCart } from "../../context/CartContext";
 import styles from "./CartMain.module.css";
 
-function CartMain({ cart }) {
+function CartMain() {
+  const { cart } = useCart();
+
+  const totalAmount = cart.reduce((total, item) => {
+    return total + item.price * item.quantity;
+  }, 0);
+
   return (
     <main>
       <h1>Shopping Cart</h1>
@@ -10,7 +16,7 @@ function CartMain({ cart }) {
       ) : (
         <ul>
           {cart.map((item) => (
-            <li key={item.id}>
+            <li key={item.id} className={styles.cartItem}>
               <img src={item.image} alt={item.title} />
               <h3>{item.title}</h3>
               <p>${item.price}</p>
@@ -18,21 +24,12 @@ function CartMain({ cart }) {
             </li>
           ))}
         </ul>
+
       )}
+                        <h2>Total Amount: ${totalAmount.toFixed(2)}</h2>
+
     </main>
   );
 }
-
-CartMain.propTypes = {
-  cart: PropTypes.arrayOf(
-    PropTypes.shape({
-      id: PropTypes.number.isRequired,
-      image: PropTypes.string,
-      title: PropTypes.string,
-      price: PropTypes.number,
-      quantity: PropTypes.number.isRequired,
-    })
-  ).isRequired,
-};
 
 export default CartMain;

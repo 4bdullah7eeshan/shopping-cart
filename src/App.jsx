@@ -1,10 +1,10 @@
-import { useState } from "react";
 import Header from "./components/Header/Header";
 import HomeMain from "./components/HomeMain/HomeMain";
 import Footer from "./components/Footer/Footer";
 import ProductsMain from "./components/ProductsMain/ProductsMain";
 import CartMain from "./components/CartMain/CartMain";
 import { Routes, Route } from "react-router-dom";
+import { useState } from "react";
 
 function App() {
   const [cart, setCart] = useState([]);
@@ -23,9 +23,11 @@ function App() {
     });
   };
 
+  const cartItemCount = cart.reduce((count, item) => count + item.quantity, 0);
+
   return (
     <>
-      <Header cartItemCount={cart.reduce((acc, item) => acc + item.quantity, 0)} />
+      <Header cartItemCount={cartItemCount} />
       <Routes>
         <Route path="/" element={<HomeMain />} />
         <Route path="/products" element={<ProductsMain addToCart={addToCart} />} />
