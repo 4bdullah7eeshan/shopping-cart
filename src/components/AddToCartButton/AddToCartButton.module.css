@@ -1,1 +1,10 @@
 /* Think about this later */
+.addToCartButton {
+    background-color: #28a745;
+    color: #fff;
+  }
+  
+  .addToCartButton:hover {
+    background-color: #218838;
+
+}

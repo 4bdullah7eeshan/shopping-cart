@@ -34,26 +34,29 @@ const Item = () => {
           <h1>{product.title}</h1>
           <h2>Description</h2>
           <p>{product.description}</p>
-          <p>Price: ${product.price}</p>
-          <p>Currently in Cart: {quantityInCart}</p>
+          <h2>Price</h2>
+          <p>${product.price}</p>
+          <h2>Cart Details</h2>
+          <p>Current quantity in Cart: {quantityInCart}</p>
 
           <div className={styles.quantityControls}>
-            <button onClick={handleDecrement}>-</button>
+            <button onClick={handleDecrement} className={styles.decrementButton}>-</button>
             <input type="number" value={quantity} readOnly />
-            <button onClick={handleIncrement}>+</button>
+            <button onClick={handleIncrement} className={styles.incrementButton}>+</button>
           </div>
 
-          <div>
+          <div className={styles.cartManager}>
             {quantity > 0 && (
               <AddToCartButton
                 product={product}
                 quantity={quantity}
                 addToCart={() => addToCart(product, quantity)}
+                className={styles.addToCartButton}
               />
             )}
 
             {quantityInCart > 0 && (
-                <button onClick={() => removeFromCart(product.id)}>Remove</button>
+                <button onClick={() => removeFromCart(product.id)} className={styles.removeFromCartButton}>Remove from Cart</button>
             )}
           </div>
         </div>
