@@ -1,33 +1,17 @@
 import PropTypes from "prop-types";
-import { useState } from "react";
-import { useCart } from "../../context/CartContext";
-import AddToCartButton from "../AddToCartButton/AddToCartButton";
+import { Link } from "react-router-dom";
 import styles from "./ProductCard.module.css";
 
 const ProductCard = ({ product }) => {
-  const { getProductQuantity, addToCart } = useCart();
-  const initialQuantityInCart = getProductQuantity(product.id);
-  const [quantity, setQuantity] = useState(initialQuantityInCart);
-
-  const handleIncrement = () => setQuantity((prevQuantity) => prevQuantity + 1);
-  const handleDecrement = () => setQuantity((prevQuantity) => Math.max(prevQuantity - 1, 0));
 
   return (
-    <div className={styles.productCard}>
-      <img src={product.image} alt={product.title} className={styles.productImage} />
-      <h3>{product.title}</h3>
-      <p>${product.price}</p>
-
-      <div className={styles.quantityControls}>
-        <button onClick={handleDecrement}>-</button>
-        <input type="number" value={quantity} readOnly />
-        <button onClick={handleIncrement}>+</button>
+    <Link to={`/products/${product.id}`}>
+      <div className={styles.productCard}>
+        <img src={product.image} alt={product.title} className={styles.productImage} />
+        <h3>{product.title}</h3>
+        <p>${product.price}</p>
       </div>
-
-      {quantity > 0 && (
-        <AddToCartButton product={product} quantity={quantity} addToCart={() => addToCart(product, quantity)} />
-      )}
-    </div>
+    </Link>
   );
 };
 

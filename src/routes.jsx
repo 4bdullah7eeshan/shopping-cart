@@ -3,6 +3,7 @@ import Products from "./pages/Products";
 import Cart from "./pages/Cart";
 import ErrorPage from "./pages/ErrorPage";
 import Layout from "./components/Layout/Layout";
+import Product from "./pages/Product";
 
 const routes = [
   {
@@ -17,6 +18,10 @@ const routes = [
       {
         path: "products",
         element: <Products />, // Render Products page here
+      },
+      {
+        path: "products/:productId",
+        element: <Product />,
       },
       {
         path: "cart",
