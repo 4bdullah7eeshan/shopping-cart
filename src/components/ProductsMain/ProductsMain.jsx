@@ -14,10 +14,15 @@ function ProductsMain() {
       <header>
         <h1>Products</h1>
       </header>
-      <div className={styles.products}>
+      <div className={styles.view}>
+        <aside>
+          <h3>Categories</h3>
+        </aside>
+        <section className={styles.products}>
         {products && products.map((product) => (
           <ProductCard key={product.id} product={product} addToCart={addToCart} />
         ))}
+      </section>
       </div>
     </main>
   );
