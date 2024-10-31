@@ -4,9 +4,8 @@ import styles from "./Logo.module.css";
 function Logo() {
     return (
         <h1 className={styles.logo}>
-            S
             <Store />
-            C
+            Shopping Cart
         </h1>
     );
 }
