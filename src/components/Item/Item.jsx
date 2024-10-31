@@ -7,11 +7,12 @@ import AddToCartButton from "../AddToCartButton/AddToCartButton";
 
 const Item = () => {
   const { productId } = useParams();
-  const { products, addToCart, getProductQuantity } = useCart();
+  const { products, addToCart, getProductQuantity, removeFromCart } = useCart();
   const product = products ? products.find((item) => item.id === parseInt(productId)) : null;
 
-  const [quantity, setQuantity] = useState(1);
   const quantityInCart = getProductQuantity(product?.id);
+  const [quantity, setQuantity] = useState(quantityInCart);
+
 
   if (!product) return <p>Product not found</p>;
 
@@ -38,6 +39,10 @@ const Item = () => {
           quantity={quantity}
           addToCart={() => addToCart(product, quantity)}
         />
+      )}
+
+      {quantityInCart > 0 && (
+          <button onClick={() => removeFromCart(product.id)}>Remove</button>
       )}
     </div>
   );
