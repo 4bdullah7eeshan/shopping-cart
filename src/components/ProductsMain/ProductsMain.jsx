@@ -17,12 +17,12 @@ function ProductsMain() {
 
   return (
     <main>
-      <header>
+      <header className={styles.header}>
         <h1>Products</h1>
       </header>
       <div className={styles.view}>
         <aside>
-          <h3>Categories</h3>
+          <h2>Categories</h2>
           <ul>
             <li onClick={() => setSelectedCategory("all")}>All</li>
             {categories.map((category, index) => (

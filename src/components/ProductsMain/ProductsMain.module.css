@@ -2,11 +2,20 @@ main {
     padding: 1rem;
 }
 
+.header {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-align: center;
+    margin-bottom: 1rem;
+}
+
 .products {
     width: 80vw;
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     gap: 1rem;
+    padding: 1rem;
 
 }
 
@@ -16,4 +25,15 @@ main {
 
 aside {
     width: 20vw;
+    padding: 1rem;
+    overflow-y: auto;
+    border-right: 1px solid black;
+}
+
+aside ul {
+    list-style-type: none;
+}
+
+ul li {
+    cursor: pointer;
 }
