@@ -2,8 +2,15 @@ import Slider from 'react-slick';
 import "slick-carousel/slick/slick.css"; 
 import "slick-carousel/slick/slick-theme.css";
 import styles from "./HomeMain.module.css";
+import { useCart } from '../../context/CartContext';
+import ProductCard from "../ProductCard/ProductCard";
+
 
 function HomeMain() {
+    const { products, addToCart } = useCart();
+
+    const topProducts = products ? products.filter((product) => product.rating.rate >= 4.5) : [];
+
     const settings = {
         dots: false,
         infinite: true,
@@ -32,6 +39,16 @@ function HomeMain() {
                 </div>
             ))}
             </Slider>
+            <section className={styles.topProducts}>
+                <header className={styles.header}>
+                    <h2>Top Products</h2>
+                </header>
+                <div className={styles.grid}>
+                    {topProducts.map((product) => (
+                        <ProductCard key={product.id} product={product} addToCart={addToCart} />
+                    ))}
+                </div>
+            </section>
 
         </main>
     )
