@@ -1,6 +1,7 @@
 .productPage {
     display: flex;
     flex-direction: column;
+    gap: 2rem;
 }
 .product {
     display: flex;
@@ -25,5 +26,19 @@
 }
 
 .productDetails {
+    padding: 1rem;
+}
+
+.similarProducts {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+.similarProductsGrid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 1rem;
     padding: 1rem;
 }

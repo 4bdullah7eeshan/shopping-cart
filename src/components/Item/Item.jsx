@@ -58,6 +58,7 @@ const Item = () => {
           </div>
         </div>
         </div>
+        
         <div className={styles.similarProducts}>
         <h2>Similar Products</h2>
         <div className={styles.similarProductsGrid}>
