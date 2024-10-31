@@ -5,11 +5,12 @@ import styles from "./ProductCard.module.css";
 const ProductCard = ({ product }) => {
 
   return (
-    <Link to={`/products/${product.id}`}>
-      <div className={styles.productCard}>
+    <Link to={`/products/${product.id}`} className={styles.link}>
+      <div className={styles.card}>
         <img src={product.image} alt={product.title} className={styles.productImage} />
         <h3>{product.title}</h3>
         <p>${product.price}</p>
+        <p>{product.rating.rate} / 5</p>
       </div>
     </Link>
   );
