@@ -10,6 +10,7 @@ export const CartProvider = ({ children }) => {
   const [products, setProducts] = useState(null);
   const [error, setError] = useState(null);
   const [loading, setLoading] = useState(true);
+  const [categories, setCategories] = useState([]);
 
   useEffect(() => {
     fetch("https://fakestoreapi.com/products", { mode: "cors" })
@@ -19,7 +20,11 @@ export const CartProvider = ({ children }) => {
         }
         return response.json();
       })
-      .then((data) => setProducts(data))
+      .then((data) => {
+        setProducts(data);
+        const uniqueCategories = [...new Set(data.map(product => product.category))];
+        setCategories(uniqueCategories);
+      })
       .catch((error) => setError(error))
       .finally(() => setLoading(false));
   }, []);
@@ -58,7 +63,7 @@ export const CartProvider = ({ children }) => {
 
   return (
     <CartContext.Provider
-      value={{ cart, products, error, loading, addToCart, removeFromCart, emptyCart, getProductQuantity, getTotalQuantity }}
+      value={{ cart, products, categories, error, loading, addToCart, removeFromCart, emptyCart, getProductQuantity, getTotalQuantity }}
     >
       {children}
     </CartContext.Provider>
