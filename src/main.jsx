@@ -5,6 +5,7 @@ import routes from "./routes";
 import { CartProvider } from "./context/CartContext";
 import "./styles/reset.css";
 import "./styles/layout.css";
+import "./index.css"
 
 const router = createBrowserRouter(routes);
 
