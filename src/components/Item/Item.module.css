@@ -1,0 +1,25 @@
+.product {
+    display: flex;
+    flex-direction: row;
+    gap: 2.5rem;
+}
+
+.productImage,
+.productDetails {
+    flex: 1;
+}
+.productImage {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.productImage img {
+    width: 50vw;
+    height: 50vh;
+    object-fit: contain;
+}
+
+.productDetails {
+    padding: 1rem;
+}

@@ -20,31 +20,39 @@ const Item = () => {
   const handleDecrement = () => setQuantity((prev) => Math.max(prev - 1, 1));
 
   return (
-    <div className={styles.productPage}>
-      <img src={product.image} alt={product.title} className={styles.productImage} />
-      <h2>{product.title}</h2>
-      <p>{product.description}</p>
-      <p>Price: ${product.price}</p>
-      <p>Currently in Cart: {quantityInCart}</p>
+    <main className={styles.productPage}>
+      <div className={styles.product}>
+        <div className={styles.productImage}>
+          <img src={product.image} alt={product.title} className={styles.productImage} />
+        </div>
+        <div className={styles.productDetails}>
+          <h1>{product.title}</h1>
+          <p>{product.description}</p>
+          <p>Price: ${product.price}</p>
+          <p>Currently in Cart: {quantityInCart}</p>
 
-      <div className={styles.quantityControls}>
-        <button onClick={handleDecrement}>-</button>
-        <input type="number" value={quantity} readOnly />
-        <button onClick={handleIncrement}>+</button>
+          <div className={styles.quantityControls}>
+            <button onClick={handleDecrement}>-</button>
+            <input type="number" value={quantity} readOnly />
+            <button onClick={handleIncrement}>+</button>
+          </div>
+
+          <div>
+            {quantity > 0 && (
+              <AddToCartButton
+                product={product}
+                quantity={quantity}
+                addToCart={() => addToCart(product, quantity)}
+              />
+            )}
+
+            {quantityInCart > 0 && (
+                <button onClick={() => removeFromCart(product.id)}>Remove</button>
+            )}
+          </div>
+        </div>
       </div>
-
-      {quantity > 0 && (
-        <AddToCartButton
-          product={product}
-          quantity={quantity}
-          addToCart={() => addToCart(product, quantity)}
-        />
-      )}
-
-      {quantityInCart > 0 && (
-          <button onClick={() => removeFromCart(product.id)}>Remove</button>
-      )}
-    </div>
+    </main>
   );
 };
 
