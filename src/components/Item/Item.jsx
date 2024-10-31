@@ -4,6 +4,7 @@ import { useCart } from "../../context/CartContext";
 import { useState } from "react";
 import styles from "./Item.module.css";
 import AddToCartButton from "../AddToCartButton/AddToCartButton";
+import ProductCard from "../ProductCard/ProductCard";
 
 const Item = () => {
   const { productId } = useParams();
@@ -19,6 +20,10 @@ const Item = () => {
   const handleIncrement = () => setQuantity((prev) => prev + 1);
   const handleDecrement = () => setQuantity((prev) => Math.max(prev - 1, 1));
 
+  const similarProducts = products
+  ? products.filter((item) => item.category === product.category && item.id !== product.id)
+  : [];
+
   return (
     <main className={styles.productPage}>
       <div className={styles.product}>
@@ -27,6 +32,7 @@ const Item = () => {
         </div>
         <div className={styles.productDetails}>
           <h1>{product.title}</h1>
+          <h2>Description</h2>
           <p>{product.description}</p>
           <p>Price: ${product.price}</p>
           <p>Currently in Cart: {quantityInCart}</p>
@@ -51,7 +57,19 @@ const Item = () => {
             )}
           </div>
         </div>
-      </div>
+        </div>
+        <div className={styles.similarProducts}>
+        <h2>Similar Products</h2>
+        <div className={styles.similarProductsGrid}>
+          {similarProducts.map((similarProduct) => (
+            <ProductCard
+              key={similarProduct.id}
+              product={similarProduct}
+              addToCart={addToCart}
+            />
+          ))}
+        </div>
+        </div>
     </main>
   );
 };

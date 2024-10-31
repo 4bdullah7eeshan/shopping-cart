@@ -1,3 +1,7 @@
+.productPage {
+    display: flex;
+    flex-direction: column;
+}
 .product {
     display: flex;
     flex-direction: row;
