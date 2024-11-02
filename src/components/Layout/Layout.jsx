@@ -3,7 +3,6 @@ import PreHeader from "../PreHeader/PreHeader";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { useCart } from "../../context/CartContext";
-import Newsletter from "../Newsletter/Newsletter";
 import PreFooter from "../PreFooter/PreFooter";
 
 const Layout = () => {
@@ -15,7 +14,6 @@ const Layout = () => {
       <PreHeader />
       <Header cartItemCount={cartItemCount} />
       <Outlet />
-      <Newsletter />
       <PreFooter />
       <Footer />
     </>

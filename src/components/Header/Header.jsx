@@ -1,4 +1,3 @@
-import Logo from "../Logo/Logo";
 import Nav from "../Nav/Nav";
 import styles from "./Header.module.css";
 

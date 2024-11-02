@@ -1,12 +1,12 @@
 .newsletter {
-    margin: 2rem 0;
     padding: 2rem;
     background-color: #f4f4f4;
     border-radius: 8px;
-    text-align: center;
+    text-align: left;
     display: flex;
+    flex-direction: column;
     justify-content: space-between;
-    align-items: center;
+    align-items: flex-start;
 }
 
 .header {
@@ -14,8 +14,7 @@
 }
 
 .header h2 {
-    font-size: 1.8rem;
-    color: #333;
+    color: #071e4e;
 }
 
 .header p {
@@ -29,27 +28,32 @@
     gap: 1rem;
     max-width: 500px;
     margin: 0 auto;
+    margin-top: 1rem;
 }
 
 .input {
     padding: 0.8rem;
-    border: 1px solid #ccc;
-    border-radius: 4px;
+    border: 1px solid #071e4e;
     flex: 1;
     font-size: 1rem;
+    color: #fffbf9;
 }
 
 .button {
-    padding: 0.8rem 1.5rem;
-    background-color: #007bff;
-    color: white;
     border: none;
-    border-radius: 4px;
-    font-size: 1rem;
     cursor: pointer;
     transition: background-color 0.3s;
+    background-color: #071e4e;
+    color: #fffbf9;
+    padding: 1rem;
+    outline: #fffbf9;
 }
 
 .button:hover {
-    background-color: #0056b3;
+    outline: black;
+    background-color: white;
+    color: black;
+    border: 1px solid black;
 }
+
+

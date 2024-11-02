@@ -3,7 +3,6 @@
     justify-content: space-around;
     flex-wrap: wrap;
     padding: 1rem;
-    color: white;
 }
 
 .linkSection {
@@ -26,8 +25,8 @@
 }
 
 .linkSection a {
-    text-decoration: none;
+    text-decoration: inherit;
     transition: color 0.2s;
-    color: white;
+    color: black;
 }
 

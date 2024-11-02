@@ -3,7 +3,19 @@
     justify-content: space-between;
     align-items: center;
     padding: 2rem;
-    background-color: black;
-    color: white;
-    outline: 1px solid white;
+    background-color: #efefef;
+    color: black;
+    transition: background-color 0.3s ease, color 0.3s ease;
+
+}
+
+.left {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start;
+}
+
+.preFooter h1, .preFooter h2, .preFooter h3, .preFooter h4 {
+    color: #071e4e;
 }

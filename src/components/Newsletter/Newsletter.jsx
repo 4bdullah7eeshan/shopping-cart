@@ -30,7 +30,7 @@ function Newsletter() {
                         className={styles.input}
                     />
                     <button type="submit" className={styles.button}>
-                        Subscribe
+                        SUBSCRIBE
                     </button>
                 </form>
             </div>
