@@ -57,7 +57,7 @@ function CartMain() {
               className={styles.checkoutButton}
               onClick={() => window.open("https://www.youtube.com/watch?v=dQw4w9WgXcQ", "_blank")}
             >
-              Check Out
+              CHECK OUT
             </button>
           </div>
         </div>
