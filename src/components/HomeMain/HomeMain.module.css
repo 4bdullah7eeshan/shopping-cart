@@ -34,6 +34,19 @@
     margin-top: 20px;
 }
 
+.btn {
+    background-color: #071e4e;
+    color: #fffbf9;
+    padding: 1rem;
+    outline: #fffbf9;
+}
+
+.btn:hover {
+    outline: black;
+    background-color: white;
+    color: black;
+}
+
   
   
   

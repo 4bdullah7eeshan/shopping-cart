@@ -48,6 +48,9 @@ function HomeMain() {
                         <ProductCard key={product.id} product={product} addToCart={addToCart} />
                     ))}
                 </div>
+                <div>
+                    <button className={styles.btn}>VIEW ALL PRODUCTS</button>
+                </div>
             </section>
         </main>
     )
