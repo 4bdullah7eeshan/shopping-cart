@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import styles from "./HomeMain.module.css";
 import { useCart } from '../../context/CartContext';
 import ProductCard from "../ProductCard/ProductCard";
+import { Link } from 'react-router-dom';
 
 
 function HomeMain() {
@@ -49,7 +50,7 @@ function HomeMain() {
                     ))}
                 </div>
                 <div>
-                    <button className={styles.btn}>VIEW ALL PRODUCTS</button>
+                    <Link to="/products" className={styles.btn}>VIEW ALL PRODUCTS</Link>
                 </div>
             </section>
         </main>
