@@ -1,5 +1,4 @@
 import { Outlet } from "react-router-dom";
-import PreHeader from "../PreHeader/PreHeader";
 import Header from "../Header/Header";
 import Footer from "../Footer/Footer";
 import { useCart } from "../../context/CartContext";
@@ -12,7 +11,6 @@ const Layout = () => {
 
   return (
     <>
-      <PreHeader />
       <Header cartItemCount={cartItemCount} />
       <Outlet />
       <Newsletter />
