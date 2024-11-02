@@ -1,7 +1,13 @@
 .card {
     padding: 0.5rem;
     text-align: center;
-
+    padding: 1rem;
+    text-align: center;
+    transition: transform 0.2s ease;
+}
+  
+.card:hover {
+    transform: scale(1.03);
 }
 
 .productImage {
