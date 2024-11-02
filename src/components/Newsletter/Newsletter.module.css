@@ -2,11 +2,11 @@
     padding: 2rem;
     background-color: #f4f4f4;
     border-radius: 8px;
-    text-align: left;
+    text-align: center;
     display: flex;
     flex-direction: column;
-    justify-content: space-between;
-    align-items: flex-start;
+    justify-content: center;
+    align-items: center;
 }
 
 .header {

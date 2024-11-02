@@ -3,10 +3,4 @@
     padding: 1.5rem;
     background-color: black;
     color: white;
-    transition: background-color 0.3s ease, color 0.3s ease;
-}
-
-.header:hover {
-    background-color: white;
-    color: black;
 }
