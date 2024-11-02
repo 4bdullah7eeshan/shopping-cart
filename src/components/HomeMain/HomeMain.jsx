@@ -4,6 +4,7 @@ import "slick-carousel/slick/slick-theme.css";
 import styles from "./HomeMain.module.css";
 import { useCart } from '../../context/CartContext';
 import ProductCard from "../ProductCard/ProductCard";
+import Newsletter from '../Newsletter/Newsletter';
 
 
 function HomeMain() {
@@ -49,6 +50,8 @@ function HomeMain() {
                     ))}
                 </div>
             </section>
+            <Newsletter />
+
 
         </main>
     )
