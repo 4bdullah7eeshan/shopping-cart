@@ -4,6 +4,8 @@ import Cart from "./pages/Cart";
 import ErrorPage from "./pages/ErrorPage";
 import Layout from "./components/Layout/Layout";
 import Product from "./pages/Product";
+import About from "./pages/About";
+import { element } from "prop-types";
 
 const routes = [
   {
@@ -26,6 +28,10 @@ const routes = [
       {
         path: "cart",
         element: <Cart />, // Render Cart page here
+      },
+      {
+        path: "about",
+        element: <About />,
       },
     ],
   },

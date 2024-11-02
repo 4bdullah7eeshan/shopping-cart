@@ -1,0 +1,33 @@
+.about,
+.header,
+.aboutSection {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    padding: 1rem;
+    padding-left: 10rem;
+    padding-right: 10rem;
+}
+
+.aboutSection {
+    gap: 1rem;
+    text-align: justify;
+    gap: 2rem;
+}
+
+.aboutP {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    gap: 2rem;
+}
+
+
+
+.aboutSection img {
+    width: 25vw;
+    height: auto;
+    object-fit: contain;
+}

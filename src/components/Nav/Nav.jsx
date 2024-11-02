@@ -4,15 +4,19 @@ import Logo from "../Logo/Logo";
 import { useCart } from "../../context/CartContext";
 import { ShoppingCart } from 'lucide-react';
 
-
 function Nav() {
     const { getTotalQuantity } = useCart();
 
     return (
         <nav className={styles.nav}>
-            <Link to="/products">Products</Link>
-            <Link to="/"><Logo /></Link>
-            <Link to="/cart"><ShoppingCart /> ({getTotalQuantity()})</Link> {/* Here, the count of items in cart must be shown too! */}
+            <div>
+                <Link to="/"><Logo /></Link>
+            </div>
+            <div className={styles.links}>
+                <Link to="/products">Products</Link>
+                <Link to="/about">About</Link>
+                <Link to="/cart"><ShoppingCart /> ({getTotalQuantity()})</Link>
+            </div>    
         </nav>
     );
 }
