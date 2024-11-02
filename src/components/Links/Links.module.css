@@ -1,0 +1,33 @@
+.links {
+    display: flex;
+    justify-content: space-around;
+    flex-wrap: wrap;
+    padding: 1rem;
+    color: white;
+}
+
+.linkSection {
+    min-width: 150px;
+    margin: 1rem;
+}
+
+.linkSection h3 {
+    font-size: 1.1rem;
+    margin-bottom: 0.5rem;
+}
+
+.linkSection ul {
+    list-style: none;
+    padding: 0;
+}
+
+.linkSection li {
+    margin: 0.3rem 0;
+}
+
+.linkSection a {
+    text-decoration: none;
+    transition: color 0.2s;
+    color: white;
+}
+
