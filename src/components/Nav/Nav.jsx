@@ -3,6 +3,7 @@ import styles from "./Nav.module.css";
 import Logo from "../Logo/Logo";
 import { useCart } from "../../context/CartContext";
 import { ShoppingCart } from 'lucide-react';
+import SignUpButton from '../SignUpButton/SignUpButton';
 
 function Nav() {
     const { getTotalQuantity } = useCart();
@@ -15,6 +16,7 @@ function Nav() {
             <div className={styles.links}>
                 <Link to="/products">Products</Link>
                 <Link to="/about">About</Link>
+                <SignUpButton />
                 <Link to="/cart"><ShoppingCart /> ({getTotalQuantity()})</Link>
             </div>    
         </nav>

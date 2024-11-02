@@ -1,0 +1,13 @@
+.signUpButton {
+    background-color: black;
+    outline: 1px solid white;
+    color: white;
+    padding: 1rem;
+    cursor: pointer;
+}
+
+.signUpButton:hover {
+    background-color: white;
+    outline: 1px solid black;
+    color: black;
+}
