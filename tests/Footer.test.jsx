@@ -10,5 +10,15 @@ describe("Footer Component", () => {
     expect(copyrightText).toBeInTheDocument();
   });
 
+  it("contains a GitHub link with correct attributes", () => {
+    render(<Footer />);
+  
+    const githubLink = screen.getByRole("link", { name: /GitHub profile/i });
+    expect(githubLink).toBeInTheDocument();
+    expect(githubLink).toHaveAttribute("href", "https://github.com/4bdullah7eeshan");
+    expect(githubLink).toHaveAttribute("target", "_blank");
+    expect(githubLink).toHaveAttribute("rel", "noopener noreferrer");
+  });
+
   
 });
