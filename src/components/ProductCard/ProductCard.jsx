@@ -22,6 +22,10 @@ ProductCard.propTypes = {
     image: PropTypes.string,
     title: PropTypes.string,
     price: PropTypes.number,
+    rating: PropTypes.shape({
+      rate: PropTypes.number.isRequired,
+      count: PropTypes.number,
+    }).isRequired,
   }).isRequired,
 };
 
